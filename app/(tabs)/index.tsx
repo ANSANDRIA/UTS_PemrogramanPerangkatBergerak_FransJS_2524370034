@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   SafeAreaView,
- ScrollView,
+  ScrollView,
 } from 'react-native';
 
 import { Link } from 'expo-router';
@@ -23,23 +23,25 @@ export default function Index() {
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={styles.title}>Buat Akun</Text>
-        <Text style={styles.title}>Baru</Text>
+        <Text style={styles.welcome}>Create Your</Text>
+        <Text style={styles.title}>Pink Account</Text>
 
-        <View style={styles.formContainer}>
-          <Text style={styles.label}>Nama Lengkap</Text>
+        <View style={styles.card}>
+          <Text style={styles.label}>Full Name</Text>
+
           <TextInput
             style={styles.input}
-            placeholder="Nama Anda"
+            placeholder="Enter your full name"
             placeholderTextColor="#999"
             value={fullName}
             onChangeText={setFullName}
           />
 
-          <Text style={styles.label}>Email</Text>
+          <Text style={styles.label}>Email Address</Text>
+
           <TextInput
             style={styles.input}
-            placeholder="contoh@email.com"
+            placeholder="example@email.com"
             placeholderTextColor="#999"
             keyboardType="email-address"
             autoCapitalize="none"
@@ -48,6 +50,7 @@ export default function Index() {
           />
 
           <Text style={styles.label}>Password</Text>
+
           <TextInput
             style={styles.input}
             placeholder="******"
@@ -57,7 +60,8 @@ export default function Index() {
             onChangeText={setPassword}
           />
 
-          <Text style={styles.label}>Konfirmasi Password</Text>
+          <Text style={styles.label}>Confirm Password</Text>
+
           <TextInput
             style={styles.input}
             placeholder="******"
@@ -68,13 +72,21 @@ export default function Index() {
           />
 
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>DAFTAR</Text>
+            <Text style={styles.buttonText}>SIGN UP</Text>
           </TouchableOpacity>
+
+          <Link href="/login" asChild>
+            <TouchableOpacity>
+              <Text style={styles.linkText}>
+                Already have an account? Login
+              </Text>
+            </TouchableOpacity>
+          </Link>
 
           <Link href="/forgot-password" asChild>
             <TouchableOpacity>
-              <Text style={styles.forgotText}>
-                Lupa Password?
+              <Text style={styles.linkText}>
+                Forgot Password?
               </Text>
             </TouchableOpacity>
           </Link>
@@ -87,67 +99,74 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: '#111111',
   },
 
   scrollContainer: {
     flexGrow: 1,
     justifyContent: 'center',
-    paddingHorizontal: 30,
+    paddingHorizontal: 25,
     paddingVertical: 40,
+  },
+
+  welcome: {
+    fontSize: 24,
+    color: '#ffffff',
+    textAlign: 'center',
   },
 
   title: {
     fontSize: 42,
-    fontWeight: '300',
-    color: '#ffffff',
+    fontWeight: '700',
+    color: '#ff69b4',
     textAlign: 'center',
-    lineHeight: 50,
+    marginBottom: 40,
   },
 
-  formContainer: {
-    marginTop: 50,
+  card: {
+    backgroundColor: '#ffffff',
+    borderRadius: 25,
+    padding: 25,
   },
 
   label: {
     fontSize: 14,
-    color: '#ffffff',
+    color: '#333',
     marginBottom: 8,
-    marginLeft: 3,
+    marginTop: 10,
   },
 
   input: {
-    width: '100%',
     height: 55,
     borderWidth: 1,
-    borderColor: '#E5E5E5',
-    borderRadius: 14,
+    borderColor: '#ffc0cb',
+    borderRadius: 15,
     paddingHorizontal: 18,
     fontSize: 16,
-    marginBottom: 22,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#fff5f8',
     color: '#333',
   },
 
   button: {
-    marginTop: 20,
+    marginTop: 30,
     height: 58,
-    backgroundColor: '#a20000',
-    borderRadius: 14,
+    backgroundColor: '#ff69b4',
+    borderRadius: 15,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
   buttonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 18,
-    fontWeight: '600',
+    fontWeight: '700',
   },
 
-  forgotText: {
-    marginTop: 20,
+  linkText: {
+    marginTop: 18,
     textAlign: 'center',
-    color: '#ffffff',
+    color: '#ff69b4',
     fontSize: 15,
+    fontWeight: '600',
   },
 });

@@ -16,20 +16,20 @@ export default function ForgotPassword() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.title}>Lupa</Text>
-        <Text style={styles.title}>Password?</Text>
+        <Text style={styles.title}>Forgot</Text>
+        <Text style={styles.subtitle}>Password?</Text>
 
         <Text style={styles.description}>
-          Masukkan alamat email Anda di bawah ini dan kami akan mengirimkan
-          link untuk mengatur ulang password Anda.
+          Enter your email address and we will send you
+          a reset password link.
         </Text>
 
-        <View style={styles.formContainer}>
-          <Text style={styles.label}>Alamat Email</Text>
+        <View style={styles.card}>
+          <Text style={styles.label}>Email Address</Text>
 
           <TextInput
             style={styles.input}
-            placeholder="contoh@email.com"
+            placeholder="example@email.com"
             placeholderTextColor="#999"
             keyboardType="email-address"
             autoCapitalize="none"
@@ -39,14 +39,14 @@ export default function ForgotPassword() {
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>
-              Kirim Link Reset
+              SEND RESET LINK
             </Text>
           </TouchableOpacity>
 
           <Link href="/login" asChild>
             <TouchableOpacity>
-              <Text style={styles.backText}>
-                Kembali ke Login
+              <Text style={styles.linkText}>
+                Back to Login
               </Text>
             </TouchableOpacity>
           </Link>
@@ -59,74 +59,79 @@ export default function ForgotPassword() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: '#111111',
   },
 
   content: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 30,
+    paddingHorizontal: 25,
   },
 
   title: {
     fontSize: 42,
-    fontWeight: '300',
     color: '#ffffff',
     textAlign: 'center',
-    lineHeight: 50,
+  },
+
+  subtitle: {
+    fontSize: 48,
+    fontWeight: '700',
+    color: '#ff69b4',
+    textAlign: 'center',
   },
 
   description: {
-    marginTop: 25,
-    fontSize: 15,
-    color: '#cccccc',
+    marginTop: 20,
     textAlign: 'center',
+    color: '#dddddd',
+    fontSize: 15,
     lineHeight: 24,
-    paddingHorizontal: 10,
+    marginBottom: 35,
   },
 
-  formContainer: {
-    marginTop: 45,
+  card: {
+    backgroundColor: '#ffffff',
+    borderRadius: 25,
+    padding: 25,
   },
 
   label: {
     fontSize: 14,
-    color: '#ffffff',
+    color: '#333',
     marginBottom: 8,
-    marginLeft: 3,
   },
 
   input: {
-    width: '100%',
     height: 55,
     borderWidth: 1,
-    borderColor: '#E5E5E5',
-    borderRadius: 14,
+    borderColor: '#ffc0cb',
+    borderRadius: 15,
     paddingHorizontal: 18,
     fontSize: 16,
-    backgroundColor: '#FAFAFA',
-    color: '#333',
-    marginBottom: 30,
+    backgroundColor: '#fff5f8',
   },
 
   button: {
+    marginTop: 30,
     height: 58,
-    backgroundColor: '#a20000',
-    borderRadius: 14,
+    backgroundColor: '#ff69b4',
+    borderRadius: 15,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
   buttonText: {
-    color: '#FFFFFF',
+    color: '#ffffff',
     fontSize: 17,
-    fontWeight: '600',
+    fontWeight: '700',
   },
 
-  backText: {
-    marginTop: 25,
+  linkText: {
+    marginTop: 20,
     textAlign: 'center',
-    color: '#ffffff',
+    color: '#ff69b4',
     fontSize: 15,
+    fontWeight: '600',
   },
 });
