@@ -23,25 +23,25 @@ export default function Index() {
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={styles.welcome}>Create Your</Text>
-        <Text style={styles.title}>Pink Account</Text>
+        <Text style={styles.title}>Buat Akun</Text>
+        <Text style={styles.title}>Baru</Text>
 
-        <View style={styles.card}>
-          <Text style={styles.label}>Full Name</Text>
+        <View style={styles.formContainer}>
+          <Text style={styles.label}>Nama Lengkap</Text>
 
           <TextInput
             style={styles.input}
-            placeholder="Enter your full name"
+            placeholder="Nama Anda"
             placeholderTextColor="#999"
             value={fullName}
             onChangeText={setFullName}
           />
 
-          <Text style={styles.label}>Email Address</Text>
+          <Text style={styles.label}>Email</Text>
 
           <TextInput
             style={styles.input}
-            placeholder="example@email.com"
+            placeholder="contoh@email.com"
             placeholderTextColor="#999"
             keyboardType="email-address"
             autoCapitalize="none"
@@ -60,7 +60,7 @@ export default function Index() {
             onChangeText={setPassword}
           />
 
-          <Text style={styles.label}>Confirm Password</Text>
+          <Text style={styles.label}>Konfirmasi Password</Text>
 
           <TextInput
             style={styles.input}
@@ -72,21 +72,21 @@ export default function Index() {
           />
 
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>SIGN UP</Text>
+            <Text style={styles.buttonText}>DAFTAR</Text>
           </TouchableOpacity>
 
           <Link href="/login" asChild>
             <TouchableOpacity>
               <Text style={styles.linkText}>
-                Already have an account? Login
+                Sudah punya akun? Masuk
               </Text>
             </TouchableOpacity>
           </Link>
 
           <Link href="/forgot-password" asChild>
             <TouchableOpacity>
-              <Text style={styles.linkText}>
-                Forgot Password?
+              <Text style={styles.forgotText}>
+                Lupa Password?
               </Text>
             </TouchableOpacity>
           </Link>
@@ -99,74 +99,74 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111111',
+    backgroundColor: '#000000',
   },
 
   scrollContainer: {
     flexGrow: 1,
     justifyContent: 'center',
-    paddingHorizontal: 25,
+    paddingHorizontal: 30,
     paddingVertical: 40,
-  },
-
-  welcome: {
-    fontSize: 24,
-    color: '#ffffff',
-    textAlign: 'center',
   },
 
   title: {
     fontSize: 42,
-    fontWeight: '700',
-    color: '#ff69b4',
+    fontWeight: '300',
+    color: '#ffffff',
     textAlign: 'center',
-    marginBottom: 40,
+    lineHeight: 50,
   },
 
-  card: {
-    backgroundColor: '#ffffff',
-    borderRadius: 25,
-    padding: 25,
+  formContainer: {
+    marginTop: 50,
   },
 
   label: {
     fontSize: 14,
-    color: '#333',
+    color: '#ffffff',
     marginBottom: 8,
-    marginTop: 10,
+    marginLeft: 3,
   },
 
   input: {
+    width: '100%',
     height: 55,
     borderWidth: 1,
-    borderColor: '#ffc0cb',
-    borderRadius: 15,
+    borderColor: '#E5E5E5',
+    borderRadius: 14,
     paddingHorizontal: 18,
     fontSize: 16,
-    backgroundColor: '#fff5f8',
+    marginBottom: 22,
+    backgroundColor: '#FAFAFA',
     color: '#333',
   },
 
   button: {
-    marginTop: 30,
+    marginTop: 20,
     height: 58,
-    backgroundColor: '#ff69b4',
-    borderRadius: 15,
+    backgroundColor: '#a20000',
+    borderRadius: 14,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
   buttonText: {
-    color: '#ffffff',
+    color: '#fff',
     fontSize: 18,
-    fontWeight: '700',
+    fontWeight: '600',
   },
 
   linkText: {
-    marginTop: 18,
+    marginTop: 20,
     textAlign: 'center',
-    color: '#ff69b4',
+    color: '#ffffff',
     fontSize: 15,
-    fontWeight: '600',
+  },
+
+  forgotText: {
+    marginTop: 15,
+    textAlign: 'center',
+    color: '#cccccc',
+    fontSize: 15,
   },
 });

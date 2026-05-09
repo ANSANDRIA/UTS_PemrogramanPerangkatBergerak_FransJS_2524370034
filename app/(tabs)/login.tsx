@@ -17,15 +17,19 @@ export default function Login() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.title}>Welcome</Text>
-        <Text style={styles.subtitle}>Back</Text>
+        <Text style={styles.title}>Selamat</Text>
+        <Text style={styles.title}>Datang</Text>
 
-        <View style={styles.card}>
-          <Text style={styles.label}>Email Address</Text>
+        <Text style={styles.description}>
+          Silakan login untuk melanjutkan ke aplikasi.
+        </Text>
+
+        <View style={styles.formContainer}>
+          <Text style={styles.label}>Alamat Email</Text>
 
           <TextInput
             style={styles.input}
-            placeholder="example@email.com"
+            placeholder="contoh@email.com"
             placeholderTextColor="#999"
             keyboardType="email-address"
             autoCapitalize="none"
@@ -45,13 +49,13 @@ export default function Login() {
           />
 
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>LOGIN</Text>
+            <Text style={styles.buttonText}>MASUK</Text>
           </TouchableOpacity>
 
           <Link href="/forgot-password" asChild>
             <TouchableOpacity>
               <Text style={styles.linkText}>
-                Forgot Password?
+                Lupa Password?
               </Text>
             </TouchableOpacity>
           </Link>
@@ -59,7 +63,7 @@ export default function Login() {
           <Link href="/" asChild>
             <TouchableOpacity>
               <Text style={styles.linkText}>
-                Create New Account
+                Belum punya akun? Daftar
               </Text>
             </TouchableOpacity>
           </Link>
@@ -72,72 +76,75 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111111',
+    backgroundColor: '#000000',
   },
 
   content: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 25,
+    paddingHorizontal: 30,
   },
 
   title: {
     fontSize: 42,
+    fontWeight: '300',
     color: '#ffffff',
     textAlign: 'center',
+    lineHeight: 50,
   },
 
-  subtitle: {
-    fontSize: 48,
-    fontWeight: '700',
-    color: '#ff69b4',
+  description: {
+    marginTop: 25,
+    fontSize: 15,
+    color: '#cccccc',
     textAlign: 'center',
-    marginBottom: 40,
+    lineHeight: 24,
+    paddingHorizontal: 10,
   },
 
-  card: {
-    backgroundColor: '#ffffff',
-    borderRadius: 25,
-    padding: 25,
+  formContainer: {
+    marginTop: 45,
   },
 
   label: {
     fontSize: 14,
-    color: '#333',
+    color: '#ffffff',
     marginBottom: 8,
-    marginTop: 10,
+    marginLeft: 3,
   },
 
   input: {
+    width: '100%',
     height: 55,
     borderWidth: 1,
-    borderColor: '#ffc0cb',
-    borderRadius: 15,
+    borderColor: '#E5E5E5',
+    borderRadius: 14,
     paddingHorizontal: 18,
     fontSize: 16,
-    backgroundColor: '#fff5f8',
+    backgroundColor: '#FAFAFA',
+    color: '#333',
+    marginBottom: 22,
   },
 
   button: {
-    marginTop: 30,
+    marginTop: 15,
     height: 58,
-    backgroundColor: '#ff69b4',
-    borderRadius: 15,
+    backgroundColor: '#a20000',
+    borderRadius: 14,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
   buttonText: {
-    color: '#ffffff',
-    fontSize: 18,
-    fontWeight: '700',
+    color: '#FFFFFF',
+    fontSize: 17,
+    fontWeight: '600',
   },
 
   linkText: {
-    marginTop: 18,
+    marginTop: 20,
     textAlign: 'center',
-    color: '#ff69b4',
+    color: '#ffffff',
     fontSize: 15,
-    fontWeight: '600',
   },
 });
