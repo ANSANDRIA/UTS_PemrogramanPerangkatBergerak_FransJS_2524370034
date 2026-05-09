@@ -6,37 +6,27 @@ import {
   TouchableOpacity,
   StyleSheet,
   SafeAreaView,
- ScrollView,
 } from 'react-native';
 
 import { Link } from 'expo-router';
 
-export default function Index() {
-  const [fullName, setFullName] = useState('');
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView
-        contentContainerStyle={styles.scrollContainer}
-        showsVerticalScrollIndicator={false}
-      >
-        <Text style={styles.title}>Buat Akun</Text>
-        <Text style={styles.title}>Baru</Text>
+      <View style={styles.content}>
+        <Text style={styles.title}>Selamat</Text>
+        <Text style={styles.title}>Datang</Text>
+
+        <Text style={styles.description}>
+          Silakan login untuk melanjutkan ke aplikasi.
+        </Text>
 
         <View style={styles.formContainer}>
-          <Text style={styles.label}>Nama Lengkap</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Nama Anda"
-            placeholderTextColor="#999"
-            value={fullName}
-            onChangeText={setFullName}
-          />
+          <Text style={styles.label}>Alamat Email</Text>
 
-          <Text style={styles.label}>Email</Text>
           <TextInput
             style={styles.input}
             placeholder="contoh@email.com"
@@ -48,6 +38,7 @@ export default function Index() {
           />
 
           <Text style={styles.label}>Password</Text>
+
           <TextInput
             style={styles.input}
             placeholder="******"
@@ -57,29 +48,27 @@ export default function Index() {
             onChangeText={setPassword}
           />
 
-          <Text style={styles.label}>Konfirmasi Password</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="******"
-            placeholderTextColor="#999"
-            secureTextEntry
-            value={confirmPassword}
-            onChangeText={setConfirmPassword}
-          />
-
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>DAFTAR</Text>
+            <Text style={styles.buttonText}>MASUK</Text>
           </TouchableOpacity>
 
           <Link href="/forgot-password" asChild>
             <TouchableOpacity>
-              <Text style={styles.forgotText}>
+              <Text style={styles.linkText}>
                 Lupa Password?
               </Text>
             </TouchableOpacity>
           </Link>
+
+          <Link href="/" asChild>
+            <TouchableOpacity>
+              <Text style={styles.linkText}>
+                Belum punya akun? Daftar
+              </Text>
+            </TouchableOpacity>
+          </Link>
         </View>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
@@ -90,11 +79,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
   },
 
-  scrollContainer: {
-    flexGrow: 1,
+  content: {
+    flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 30,
-    paddingVertical: 40,
   },
 
   title: {
@@ -105,8 +93,17 @@ const styles = StyleSheet.create({
     lineHeight: 50,
   },
 
+  description: {
+    marginTop: 25,
+    fontSize: 15,
+    color: '#cccccc',
+    textAlign: 'center',
+    lineHeight: 24,
+    paddingHorizontal: 10,
+  },
+
   formContainer: {
-    marginTop: 50,
+    marginTop: 45,
   },
 
   label: {
@@ -124,13 +121,13 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     paddingHorizontal: 18,
     fontSize: 16,
-    marginBottom: 22,
     backgroundColor: '#FAFAFA',
     color: '#333',
+    marginBottom: 22,
   },
 
   button: {
-    marginTop: 20,
+    marginTop: 15,
     height: 58,
     backgroundColor: '#a20000',
     borderRadius: 14,
@@ -139,12 +136,12 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    color: '#fff',
-    fontSize: 18,
+    color: '#FFFFFF',
+    fontSize: 17,
     fontWeight: '600',
   },
 
-  forgotText: {
+  linkText: {
     marginTop: 20,
     textAlign: 'center',
     color: '#ffffff',
